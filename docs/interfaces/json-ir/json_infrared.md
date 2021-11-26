@@ -93,6 +93,7 @@ IR recv
 You should get a 24-bit hex encoded integer. If you get 0xFFFFFFFF, that means the button has been pressed repeatedly or held down. Try tapping quickly.
 
 ### Tips
+* IR codes must be in upper case - so `0x1FE708F` not `0x1fe708f`, and must not have a leading zero - i.e. not `0x01fe708f`.
 * Map `play` or `auto` buttons to a playlist. They currently just turn on preset cycling `CY=1` or load a playlist of presets 1-5. You can define the playlist in ir.json as in the sample below, or save a playlist as a preset and load that.
 * Save your 'every day' presets in one range of ids, maybe 1-30; your 'holiday' presets in another range, maybe 31-40. Then you can devote two buttons to cycle through presets. In our example, the command on the 'holiday cycle' button would be `P1=31&P2=40&PL=~`
 * You can also group your presets by color; for instance reddish animations in 1-10, greenish in 11-20, bluish in 21-30. The 44-key remote has up and down arrows for red, green and blue. So the command on the 'blue down' button would be `P1=21&P2=30&PL=~-` 
